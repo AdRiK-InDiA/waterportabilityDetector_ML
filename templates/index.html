@@ -1,0 +1,89 @@
+<html>
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style>
+          body{
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+          }
+          h1{background-color: blue;}
+
+          .form-submit-button {
+            background: #B9DFFF;
+            color: #fff;
+            border: 1px solid #eee;
+            border-radius: 20px;
+            box-shadow: 5px 5px 5px #eee;
+            text-shadow: none;
+            font-size: 30px;
+          }
+
+          .form-submit-button:hover {
+            background: #016ABC;
+            color: #fff;
+            border: 1px solid #eee;
+            border-radius: 20px;
+            box-shadow: 5px 5px 5px #eee;
+            text-shadow: none;
+          }
+          .danger {
+              background-color: #ffdddd;
+              border-left: 6px solid #f44336;
+
+          @media screen and (max-width: 900px) {
+            .col {
+                width: 50%;
+          }
+        }
+          @media screen and (max-width: 600px) {
+            .col {
+              width: 100%;
+          }
+        }
+
+        
+}
+        </style>
+    </head>
+    <body class="col">
+        <center>
+          <h1>
+            WATER PORTABLILITY DETECTOR 
+          </h1>
+          <form action="{{url_for('predict_datapoint')}}" method="post">
+            <b>PH :</b>
+            <input type="text" placeholder="Range: [0-14]" name="ph">
+            <br><br>
+            <b>Hardness(mg/L) :</b>
+            <input type="text" placeholder=" Range: >= 0" name="hardness">
+            <br><br>
+            <b>TDS(ppm) : </b>
+            <input type="text" placeholder=" Range: >= 0" name="tds">
+            <br><br>
+            <b>Sulphate(mg/L) : </b>
+            <input type="text" placeholder=" Range: >= 0" name="sulphate">
+            <br><br>
+            <b>Chloramines(ppm) : </b>
+            <input type="text" placeholder=" Range: >= 0 " name="chloramines">
+            <br><br>
+            <b>Conductivity(μS/cm) : </b>
+            <input type="text" placeholder=" Range: >= 0" name="conductivity">
+            <br><br>
+            <b>TOC(ppm) : </b>
+            <input type="text" placeholder=" Range: >= 0" name="toc">
+            <br><br>
+            <b>Trihalomethanes( μg/L) : </b>
+            <input type="text" placeholder=" Range: >= 0" name="Trihalomethanes">
+            <br><br>
+            <b>Turbidity(NTU) : </b>
+            <input type="text" placeholder=" Range: >= 0 " name="Turbidity">
+            <br><br>
+            <input type="submit" id="submit" class="form-submit-button" name="submit">
+          </form>
+          <div class="danger">
+            <p><strong>Warning!</strong> The input must be within the range specified .
+            Input out of the ranges is an invalid input and will be misclassified. Ranges of features
+          are mentioned above</p>
+          </div>
+        </center>
+    </body>
+</html>
