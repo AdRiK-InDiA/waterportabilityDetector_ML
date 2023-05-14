@@ -11,8 +11,8 @@ application = Flask(__name__)
 app=application
 
 ## import ridge regresor model and standard scaler pickle
-model=pickle.load(open(f'{os.getcwd()}\\notebook\\articrafts\\model.pkl','rb'))
-standard_scaler=pickle.load(open(f'{os.getcwd()}\\notebook\\articrafts\\scaler.pkl','rb'))
+model=pickle.load(open(f'{os.getcwd()}/notebook/articrafts/model.pkl','rb'))
+standard_scaler=pickle.load(open(f'{os.getcwd()}/notebook/articrafts/scaler.pkl','rb'))
 ## Route for home page
 @app.route('/')
 def index():
@@ -45,4 +45,4 @@ def predict_datapoint():
 
 
 if __name__=="__main__":
-    app.run(host="0.0.0.0")
+    app.run(host="0.0.0.0",port=5500)
